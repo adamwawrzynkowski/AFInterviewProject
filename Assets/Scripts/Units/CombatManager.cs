@@ -32,7 +32,7 @@ namespace AFSInterview.Units
 
         public BoxCollider BattleArea => battleArea;
 
-        private List<UnitBehavior> turnOrderUnits;
+        private List<UnitBehavior> turnOrderUnits = new List<UnitBehavior>();
         public void RemoveUnitFromTurnOrder(UnitBehavior unit) => turnOrderUnits.Remove(unit);
 
         private int turn            = 0;

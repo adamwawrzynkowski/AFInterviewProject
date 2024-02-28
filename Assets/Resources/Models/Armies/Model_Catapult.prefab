@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7033035c18541c5b6e185eb1b81e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mesh: {fileID: 8203908583563651972}
   unitTurn: {fileID: 5273088801703417034}
   unitRange: {fileID: 5682995146858099700}
   UnitName: {fileID: 4217787532960362720}
@@ -1087,7 +1088,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 87567061a2da1483491a5e5347e97fe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -18,7 +18,13 @@ namespace AFSInterview.Units
         public void SetKingdomID(int ID) => currentUnitKingdomID = ID;
         
         // Set unit color (based on the Kingdoms colors)
-        public void SetUnitAppearance(Color color) => GetComponentInChildren<MeshRenderer>().material.color = color;
+        public void SetUnitAppearance(Color color)
+        {
+            foreach (var mat in uUI.mesh.materials)
+            {
+                mat.color = color;
+            }
+        }
 
         // Set unit parameters
         // While setting this, new Unit will be created to avoid override problems

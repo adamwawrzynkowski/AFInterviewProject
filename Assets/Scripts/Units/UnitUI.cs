@@ -8,6 +8,7 @@ namespace AFSInterview.Units
     public class UnitUI : MonoBehaviour
     {
         // GO References
+        public MeshRenderer mesh;
         public GameObject unitTurn;
         public Transform unitRange;
         public TMP_Text UnitName;
