@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 namespace AFSInterview.Units
 {
     public class UnitUI : MonoBehaviour
     {
+        // GO References
         public GameObject unitTurn;
         public Transform unitRange;
         public TMP_Text UnitName;
@@ -19,6 +19,7 @@ namespace AFSInterview.Units
         private int maxHealth;
         private int maxArmor;
         
+        // Set UI information and make sure transforms are faced to the camera
         public void SetData(string startName, int startHealth, int startArmor, float startRange, float uiEulerAnglesY)
         {
             name = startName;
@@ -33,18 +34,21 @@ namespace AFSInterview.Units
             UpdateUI(maxHealth, maxArmor);
         }
 
+        // Update UI
         public void UpdateUI(int newHealth, int newArmor)
         {
             UnitHealth.text = "Health: " + newHealth;
             UnitArmor.text = "Armor: " + newArmor;
         }
 
+        // Display dynamic texts
         public void SetDynamicText(string newText, float duration = -1)
         {
             UnitDynamicText.text = newText;
             StartCoroutine(DisableDynamicText(duration));
         }
 
+        // Disable current dynamic text
         private IEnumerator DisableDynamicText(float duration)
         {
             yield return new WaitForSeconds(Math.Abs(duration - (-1)) < 1.0f ? 4.5f : duration);

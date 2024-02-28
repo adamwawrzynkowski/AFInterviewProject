@@ -1,10 +1,8 @@
-﻿using UnityEngine.PlayerLoop;
-
-namespace AFSInterview.Items
+﻿namespace AFSInterview.Items
 {
 	using System;
 	using UnityEngine;
-
+	
 	[Serializable]
 	public class Item
 	{
@@ -25,38 +23,35 @@ namespace AFSInterview.Items
 		
 		[Space]
 		[SerializeField] private bool consume;
+		[SerializeField] private bool consumed;
 
 		public string Name => name;
 		public int Value => value;
-		public bool Consumable => consumable;
-		public bool AddMoney => addMoney;
-		public bool AddItem => addItem;
-		public int AddMoneyValue => addMoneyValue;
-		public ItemScriptable AddItemHolder => addItemHolder;
-
-		public Item(string name, int value, bool consumable = false, bool addMoney = false, bool addItem = false, int addMoneyValue = 0, ItemScriptable addItemHolder = null)
-		{
-			this.name = name;
-			this.value = value;
-			this.consumable = consumable;
-			this.addMoney = addMoney;
-			this.addItem = addItem;
-			this.addMoneyValue = addMoneyValue;
-			this.addItemHolder = addItemHolder;
-		}
-
+		public bool Consumed => consumed;
+		
 		public void Use()
 		{
+			// Edit
+			// This function is called by clicking on the Unity's Inspector button.
+			// Currently there is no any in-game system that allows to
+			// consume items by using in-game UI.
+			
+			// If consumable has option to give money - give it
 			if (addMoney) InventoryController.Instance.Money += addMoneyValue;
+			
+			// If consumable has option to give item(s) - give it/them
+			// This function will iterate by amount
 			if (addItem)
 			{
-				for (int i = 0; i < addItemNum; i++)
+				for (var i = 0; i < addItemNum; i++)
 				{
 					InventoryController.Instance.AddItem(addItemHolder.item);
 				}
 			}
+			
+			// Remove item from Inventory after use
 			InventoryController.Instance.RemoveItem(this);
-			Debug.Log("Using" + Name);
+			Debug.Log("Using " + Name);
 		}
 	}
 }

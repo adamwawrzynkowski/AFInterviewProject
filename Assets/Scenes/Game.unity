@@ -158,9 +158,9 @@ MonoBehaviour:
     consumable: 1
     addMoney: 1
     addMoneyValue: 1000
-    addItem: 0
-    addItemHolder: {fileID: 0}
-    addItemNum: 0
+    addItem: 1
+    addItemHolder: {fileID: 11400000, guid: ab466bdec42fe436cb7756bb9950dc8d, type: 2}
+    addItemNum: 3
     consume: 0
   - name: Bag
     value: 40
@@ -175,8 +175,8 @@ MonoBehaviour:
     value: 90
     consumable: 1
     addMoney: 1
-    addMoneyValue: 0
-    addItem: 1
+    addMoneyValue: 450
+    addItem: 0
     addItemHolder: {fileID: 0}
     addItemNum: 0
     consume: 0
