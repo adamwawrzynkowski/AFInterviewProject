@@ -10,7 +10,8 @@
 		[SerializeField] private int money;
 
 		public List<Item> Items => items;
-		public int Money { get; set; }
+		public int Money { get => money; set { money = value; } }
+
 		public int ItemsCount => items.Count;
 
 		public void SellAllItemsUpToValue(int maxValue)
@@ -21,7 +22,7 @@
 				if (itemValue > maxValue)
 					continue;
 
-				money += itemValue;
+				Money += itemValue;
 				items.RemoveAt(i);
 				
 				// Edit - BugFix

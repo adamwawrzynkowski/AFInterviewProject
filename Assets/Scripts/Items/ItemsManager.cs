@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 
 namespace AFSInterview.Items
 {
@@ -14,13 +15,17 @@ namespace AFSInterview.Items
 		[SerializeField] private BoxCollider itemSpawnArea;
 		[SerializeField] private float itemSpawnInterval;
 
+		[Header("UI")]
+		// Edit
+		// FindObjectOfType is expensive so I created a reference for UI Text.
+		[SerializeField] private TMP_Text moneyUIText;
+
 		private float nextItemSpawnTime;
 		
 		// Camera
 		private Camera mainCamera;
 		
 		// Money
-		private TextMeshProUGUI moneyUIText;
 		private int cachedMoney;
 
 		private void Awake()
@@ -28,10 +33,6 @@ namespace AFSInterview.Items
 			// Edit
 			// Find main camera in the Awake()
 			mainCamera = Camera.main;
-			
-			// Edit
-			// FindObjectOfType is expensive so it should be called once instead of every frame.
-			moneyUIText = FindObjectOfType<TextMeshProUGUI>();
 		}
 
 		private void Update()
